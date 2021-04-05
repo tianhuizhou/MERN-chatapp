@@ -4,11 +4,11 @@ import Sidebar from './Sidebar';
 import Chat from './Chat';
 function App() {
   return (
-    <div className="App">
-      <h1>let build a chat app</h1>
-
-        <Sidebar />
-        <Chat />
+    <div className="app">
+        <div className={'app_body'}>
+            <Sidebar />
+            <Chat />
+        </div>
     </div>
   );
 }
