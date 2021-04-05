@@ -5,6 +5,7 @@ import {AttachFile, MoreVert, SearchOutlined} from "@material-ui/icons";
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 import IconButton from "@material-ui/core/IconButton";
 import MicNoneOutlinedIcon from '@material-ui/icons/MicNoneOutlined';
+import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 function Chat(){
     return (
         <div className={'chat'}>
@@ -47,9 +48,10 @@ function Chat(){
                 <MicNoneOutlinedIcon/>
                 <form>
                     <input placeholder={"Type a message"} type={'text'}/>
-                    <button type={"submit"}>Send a message</button>
+                    <button type={"submit"}>Send</button>
                 </form>
                 <EmojiEmotionsOutlinedIcon/>
+                <AddCircleOutlineOutlinedIcon/>
             </div>
         </div>
     )
