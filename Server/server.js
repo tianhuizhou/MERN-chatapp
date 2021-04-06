@@ -101,5 +101,8 @@ app.post('/api/vi/authentication/', ((req, res) => {
     })
 }))
 
+// if(process.env.NODE_ENV === 'production'){
+//     app.use(express.static('Client/build'));
+// }
 //listen
 app.listen(port, () =>console.log(`Listening on localhost:${port}`));
