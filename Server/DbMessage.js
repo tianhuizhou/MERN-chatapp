@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose');
 
 //data structure
 const dataSchema = mongoose.Schema({
@@ -8,4 +8,4 @@ const dataSchema = mongoose.Schema({
     received: Boolean
 });
 
-export default mongoose.model('messageContent', dataSchema);
+module.exports = mongoose.model('messageContent', dataSchema);

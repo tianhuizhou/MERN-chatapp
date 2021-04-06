@@ -1,10 +1,10 @@
 //importing
-import express from 'express';
-import mongoose from 'mongoose';
-import Messages from './DbMessage.js';//import my schema
-import Account from "./DbAccount.js"; //import account schema
-import Pusher from "pusher";
-import cors from "cors";
+const express = require('express');
+const mongoose = require('mongoose');
+const Messages = require('./DbMessage.js');//import my schema
+const Account = require("./DbAccount.js"); //import account schema
+const Pusher =require("pusher");
+const cors = require("cors");
 //app config
 const app = express();
 const port = process.env.PORT || 5000;

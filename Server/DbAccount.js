@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const dataSchema = mongoose.Schema({
     username: String,
     password: String,
 });
 
-export default mongoose.model('accounts', dataSchema);
+module.exports = mongoose.model('accounts', dataSchema);
