@@ -14,14 +14,13 @@
     background-color: #f8f8f8;
 }
 
-.login_container > form > button {
+.login_container > button {
     margin-top: 50px;
     text-transform: inherit !important;
     background-color: green;
     color: white;
 }
 
-.login_container > form > button:hover {
+.login_container > button:hover {
     color:#000000;
-    background-color: yellowgreen;
 }

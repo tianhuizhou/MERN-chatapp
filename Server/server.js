@@ -2,6 +2,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import Messages from './DbMessage.js';//import my schema
+import Account from "./DbAccount.js"; //import account schema
 import Pusher from "pusher";
 import cors from "cors";
 //app config
@@ -74,7 +75,31 @@ app.post('/api/v1/messages/new', ((req, res) => {
     })
 }));
 
+/// api for Authentication function
+app.post('/api/vi/authentication/', ((req, res) => {
+    const userId = req.body;
+    console.log("Yo, I got the request");
+    console.log(req.body);
+    Account.find((err, data)=>{
+        if (err) {
+            res.status(400).send(err);
+        } else {
+            let a = 0;
+            for(let i = 0;i < data.length; i++){
+                if (data[i].username === userId.username && data[i].password === userId.password){
+                    a++;
+                    break;
+                }
+            }
+            if (a !== 0 ){
+                res.status(200).send(userId.username);
+            } else {
+                res.status(401).send("The account does not exist or password is incorrect!");
+            }
 
+        }
+    })
+}))
 
 //listen
 app.listen(port, () =>console.log(`Listening on localhost:${port}`));

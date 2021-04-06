@@ -8,16 +8,16 @@ import MicNoneOutlinedIcon from '@material-ui/icons/MicNoneOutlined';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import axios from './axios';
 
-function Chat({messages}){
+function Chat({messages, username}){
     const [input, setInput] = useState('')
-
+    console.log(`username is: ${username}`);
     const sendMessage = async (e) => {
         e.preventDefault();
         await axios.post('/api/v1/messages/new', {
             message: input,
-            name: "bob",
+            name: username,
             timestamp: "now !",
-            received: false,
+            received: true,
         });
 
         setInput("");
@@ -38,7 +38,7 @@ function Chat({messages}){
             </div>
             <div className={'chat_body'}>
                 {messages.map(message => (
-                    <p className={`chat_message ${message.received && "chat_reciever"}`}>
+                    <p className={`chat_message ${(message.name === username) && "chat_reciever"}`}>
                         <span className={'chat_name'}>{message.name}</span>
                         {message.message}
                         <span className={'chat_timestamp'}>
